@@ -1,4 +1,6 @@
-        //The Wire library is used for I2C communication
+//This code comes from: https://www.sparkfun.com/tutorials/265
+
+//The Wire library is used for I2C communication
 #include <Wire.h>
 
 //This is a list of registers in the ITG-3200. Registers are parameters that determine how the sensor will behave, or they can hold data that represent the
