@@ -14,6 +14,7 @@ void print_sensors()
   Serial.print(s2);
   Serial.print(s3);
   //Serial.print(s4);
+  //Sensor 4 on our shield bot is missing, so omit it because it will ALWAYS read high.
   Serial.print(s5);
   Serial.println();
 }
