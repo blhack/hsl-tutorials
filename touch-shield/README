@@ -1,0 +1,16 @@
+How to make the touch shield work with your arduino!
+
+1) Plug the shield into the board (I tested it with an UNO).
+2) The pins on this board are a tiny bit bent.  Make sure the A0 lines up
+   properly with A0 on the arduino, adn that TX and RX line up properly
+   as well.
+
+3) Open the .pde file in this folder in the arduino IDE
+4) Compile and Upload it to your board by pressing ctrl-U or command-U 
+   (if you are on a mac).  You can also click the right arrow icon (the s
+    second icon in from the left).  Hover over it to see "upload" as a 
+    description.
+5) Open the serial monitor by pressing the magnifying glass icon at the
+   top right of the arduino IDE (the arduino program).
+
+6) Touch some spots on the board and see them appear on the serial monitor!
