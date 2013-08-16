@@ -14,3 +14,6 @@ How to make the touch shield work with your arduino!
    top right of the arduino IDE (the arduino program).
 
 6) Touch some spots on the board and see them appear on the serial monitor!
+
+
+Datasheet link: http://www.sparkfun.com/datasheets/Components/MPR121.pdf
