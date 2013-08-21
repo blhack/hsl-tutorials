@@ -1,0 +1,62 @@
+HOW TO USE THE LOL SHIELD WITH THE ARDUINO
+
+The LoL Shield is a 9x14 grid of individually-addressable LEDs. The one we
+have has red LEDs. More information about the LoL Shield can be found at
+http://jimmieprodgers.com/kits/lolshield/programlolshield/.
+
+- If you don't have it already, download and install the LoL Shield library.
+	- It can be found at https://code.google.com/p/lolshield/.
+	  I downloaded v40; there may be a newer version.
+	- Install the library. Instructions can be found at
+	  http://arduino.cc/en/Guide/Libraries
+
+- Plug the shield into the arduino (I used an UNO). Be careful not to let the
+  bottom of the shield touch the top of the USB port on the arduino, as this
+  will short out the shield.
+
+- Open the sketch file in this folder, LoLShieldExample.ino, in your
+  Arduino IDE.
+
+- Compile and Upload it to your arduino by pressing ctrl-U or command-U 
+  (if you are on a mac). One uploaded, the sketch will run, and will draw
+  a rectangle by lighting all the ouside LEDs on the shield.
+
+So how does this work? The sketch uses the library you installed back in
+the first. The library is called Charlieplexing. It implements the LedSign
+class which provides the basic commands for using the shield. There are
+several commands, and we have only used two of them in this sketch:
+LedSign::Init() and LedSign::Set().
+
+LedSign::Init() is called at the beginning of the sketch. It initializes the
+LoL Shield.
+
+LedSign::Set() turns on or off an LED at a particular location (we only turn
+them on in this sketch. It takes three parameters: the X and Y location of the
+LED, and a value to which to set the LED, 0 for off or 1 for on. Actually,
+there are other values which can be set to vary the brightness, but we aren't
+using them in this sketch.
+
+The library provides other commands you can explore:
+
+	LedSign::Clear() - Turns all LEDs on (or off)
+
+	LedSign::Horizontal() - Turns an entire horizontal row of LEDs on or off.
+
+	LedSign::Vertical() - Turns an entire vertical row of LEDs on or off.
+
+There are also commands to vary the brightness of the LEDs, and to buffer
+changes.
+
+You may notice that in in LoLShieldExample.ino, we have defines a set() 
+function as a wrapper around LedSign::Set(). The set() function can be used
+just like LedSign::Set(). In addition to setting the LED on or off, it delays
+slightly before every operation so you can see the rectangle draw. Also,
+there are two LEDs on our LoL Shield which do not work, and set() knows not
+to try to turn them on. These LEDs are not burned out; turning them on does
+weird things to the shield. Apparently the wiring on our shield is borked.
+For real applications on a working board, just use LedSign::Set().
+
+Many example sketches will have installed when you installed the library.
+Look them over for more complex examples of how to use the shield. Also,
+look over Charlieplexing.cpp, the library itself. The comments above each
+method describe how to use them.
