@@ -1,7 +1,8 @@
 HOW TO USE THE LOL SHIELD WITH THE ARDUINO
 
 The LoL Shield is a 9x14 grid of individually-addressable LEDs. The one we
-have has red LEDs.
+have has red LEDs. More information about the LoL Shield can be found at
+http://jimmieprodgers.com/kits/lolshield/programlolshield/.
 
 - If you don't have it already, download and install the LoL Shield library.
 	- It can be found at https://code.google.com/p/lolshield/.
